@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kim Hyun - Logistics Warehouse Automation Expert</title>
+
+    <!-- Google Fonts: Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Gradient Background for Hero */
+        .hero-gradient {
+            background: #f9fafb;
+        }
+
+        /* Navbar scroll effect */
+        .navbar-transparent {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .navbar-opaque {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* Fade-in animation for scroll reveal */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Mobile hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #1f2937;
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .mobile-menu.active {
+            max-height: 300px;
+        }
+
+        /* Skill card hover effect */
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Project card hover effect */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scroll for links */
+        a[href^="#"] {
+            scroll-behavior: smooth;
+        }
+
+        /* Section spacing */
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar-transparent fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                Kim Hyun
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8">
+                <a href="#about" class="text-gray-700 hover:text-gray-500 transition">About</a>
+                <a href="#skills" class="text-gray-700 hover:text-gray-500 transition">Skills</a>
+                <a href="#projects" class="text-gray-700 hover:text-gray-500 transition">Projects</a>
+                <a href="#contact" class="text-gray-700 hover:text-gray-500 transition">Contact</a>
+            </div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger md:hidden" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden" id="mobileMenu">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="#about" class="text-gray-700 hover:text-gray-500 transition">About</a>
+                <a href="#skills" class="text-gray-700 hover:text-gray-500 transition">Skills</a>
+                <a href="#projects" class="text-gray-700 hover:text-gray-500 transition">Projects</a>
+                <a href="#contact" class="text-gray-700 hover:text-gray-500 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-20">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 fade-in text-gray-900">Automation Hub 김 현</h1>
+            <h2 class="text-3xl md:text-4xl text-gray-500 mb-6 fade-in">Logistics Warehouse Automation Expert</h2>
+            <p class="text-xl md:text-2xl text-gray-500 mb-10 max-w-2xl mx-auto fade-in">
+                물류창고자동화 기획 및 엔지니어링으로 산업혁신을 주도합니다
+            </p>
+            <a href="#contact" class="inline-block bg-gray-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-700 transition fade-in" style="animation-delay: 0.2s;">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center fade-in text-gray-900">About Me</h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Card 1 -->
+                <div class="bg-white border border-gray-200 p-8 rounded-lg fade-in">
+                    <div class="text-4xl mb-4">🏢</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">쿠팡 & 무신사</h3>
+                    <p class="text-gray-600">
+                        국내 선도 이커머스 기업의 물류 자동화 팀장으로 선적, 분류, 포장 시스템 구축을 주도했습니다. 풀필먼트센터 자동화로 처리 효율성을 극대화했습니다.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white border border-gray-200 p-8 rounded-lg fade-in" style="animation-delay: 0.1s;">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">포스코DX</h3>
+                    <p class="text-gray-600">
+                        자동화설비 공급업체에서 팀장으로 엔지니어링 및 시스템 설계, 납품을 관리했습니다. 국제적 표준과 최신 기술을 적용하여 프로젝트를 완성했습니다.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white border border-gray-200 p-8 rounded-lg fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-4xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Global Experience</h3>
+                    <p class="text-gray-600">
+                        국내 최대 규모의 물류센터와 국제 공항 자동화 시스템 구축 경험으로 글로벌 표준을 이해합니다.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white border border-gray-200 p-8 rounded-lg fade-in" style="animation-delay: 0.3s;">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Innovation Focus</h3>
+                    <p class="text-gray-600">
+                        기술 혁신과 실무 경험을 통해 물류 산업의 지속 가능한 성장을 추구합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-white py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center fade-in text-gray-900">Core Competencies</h2>
+
+            <div class="grid md:grid-cols-5 gap-8">
+                <!-- Skill 1: Planning -->
+                <div class="skill-card bg-gradient-to-br from-purple-500 to-purple-700 p-8 rounded-lg text-center fade-in">
+                    <div class="text-5xl mb-4">📋</div>
+                    <h3 class="text-xl font-bold mb-2">Planning</h3>
+                    <p class="text-sm text-gray-100">프로젝트 기획 및 전략 수립</p>
+                </div>
+
+                <!-- Skill 2: Analysis -->
+                <div class="skill-card bg-gradient-to-br from-blue-500 to-blue-700 p-8 rounded-lg text-center fade-in" style="animation-delay: 0.1s;">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2">Analysis</h3>
+                    <p class="text-sm text-gray-100">데이터 분석 및 프로세스 개선</p>
+                </div>
+
+                <!-- Skill 3: Engineering -->
+                <div class="skill-card bg-gradient-to-br from-cyan-500 to-blue-700 p-8 rounded-lg text-center fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-5xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold mb-2">Engineering</h3>
+                    <p class="text-sm text-gray-100">자동화 시스템 설계 및 구현</p>
+                </div>
+
+                <!-- Skill 4: Project Management -->
+                <div class="skill-card bg-gradient-to-br from-teal-500 to-green-700 p-8 rounded-lg text-center fade-in" style="animation-delay: 0.3s;">
+                    <div class="text-5xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold mb-2">Project PM</h3>
+                    <p class="text-sm text-gray-100">프로젝트 관리 및 납품</p>
+                </div>
+
+                <!-- Skill 5: Operations & Maintenance -->
+                <div class="skill-card bg-gradient-to-br from-green-500 to-emerald-700 p-8 rounded-lg text-center fade-in" style="animation-delay: 0.4s;">
+                    <div class="text-5xl mb-4">🔧</div>
+                    <h3 class="text-xl font-bold mb-2">O&M</h3>
+                    <p class="text-sm text-gray-100">운영 및 유지보수</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center fade-in text-gray-900">Major Projects</h2>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Project 1 -->
+                <div class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden fade-in">
+                    <div class="bg-gradient-to-r from-purple-600 to-blue-600 h-40 flex items-center justify-center">
+                        <span class="text-4xl">✈️</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">인천국제공항 BHS</h3>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-purple-600 px-3 py-1 rounded-full">항공물류</span>
+                            <span class="text-xs bg-blue-600 px-3 py-1 rounded-full">자동화</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            국제 공항 수하물 자동 분류 시스템(BHS) 구축 및 운영으로 처리 효율성 극대화
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-slate-700 rounded-lg overflow-hidden fade-in" style="animation-delay: 0.1s;">
+                    <div class="bg-gradient-to-r from-blue-600 to-cyan-600 h-40 flex items-center justify-center">
+                        <span class="text-4xl">🏭</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">한진 메가허브</h3>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-blue-600 px-3 py-1 rounded-full">물류센터</span>
+                            <span class="text-xs bg-cyan-600 px-3 py-1 rounded-full">설계</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            국내 최대 규모 통합 물류 허브 설계 및 자동화 시스템 구축으로 원활한 유통망 확보
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-slate-700 rounded-lg overflow-hidden fade-in" style="animation-delay: 0.2s;">
+                    <div class="bg-gradient-to-r from-cyan-600 to-teal-600 h-40 flex items-center justify-center">
+                        <span class="text-4xl">🛍️</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">GS홈쇼핑</h3>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-cyan-600 px-3 py-1 rounded-full">이커머스</span>
+                            <span class="text-xs bg-teal-600 px-3 py-1 rounded-full">풀필먼트</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            방송 쇼핑 판매 물류 자동화 시스템 설계 및 납품으로 대량 주문 처리 능력 향상
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-slate-700 rounded-lg overflow-hidden fade-in" style="animation-delay: 0.3s;">
+                    <div class="bg-gradient-to-r from-teal-600 to-green-600 h-40 flex items-center justify-center">
+                        <span class="text-4xl">📦</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">쿠팡 풀필먼트센터</h3>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-teal-600 px-3 py-1 rounded-full">이커머스</span>
+                            <span class="text-xs bg-green-600 px-3 py-1 rounded-full">최적화</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            로켓배송 기반 자동화 풀필먼트센터 구축으로 수도권 배송 속도 극대화
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-slate-700 rounded-lg overflow-hidden fade-in" style="animation-delay: 0.4s;">
+                    <div class="bg-gradient-to-r from-green-600 to-emerald-600 h-40 flex items-center justify-center">
+                        <span class="text-4xl">👗</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">무신사 여주1센터</h3>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs bg-green-600 px-3 py-1 rounded-full">패션</span>
+                            <span class="text-xs bg-emerald-600 px-3 py-1 rounded-full">자동화</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            온라인 패션 거대 유통사 자동화 물류센터 설계 및 구현으로 빠른 배송 체계 구축
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white py-20">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-gray-900">Get in Touch</h2>
+
+            <div class="max-w-2xl mx-auto bg-gray-50 border border-gray-200 p-12 rounded-lg">
+                <p class="text-xl text-gray-600 mb-8">
+                    새로운 프로젝트 기회나 협업에 대해 논의하고 싶으신가요?<br>
+                    언제든지 연락주세요!
+                </p>
+
+                <a href="mailto:hyun.kim@a-hub.co.kr" class="inline-block bg-gray-900 text-white font-bold py-4 px-10 rounded-lg hover:bg-gray-700 transition text-lg">
+                    📧 hyun.kim@a-hub.co.kr
+                </a>
+
+                <p class="text-gray-500 mt-8 text-sm">
+                    © 2026 Kim Hyun. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('navbar-transparent');
+                navbar.classList.add('navbar-opaque');
+            } else {
+                navbar.classList.remove('navbar-opaque');
+                navbar.classList.add('navbar-transparent');
+            }
+        });
+
+        // Mobile hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll reveal animation with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0');
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
